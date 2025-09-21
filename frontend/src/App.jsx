@@ -17,7 +17,7 @@ function App() {
     setAnalysisResult(null);
 
     try {
-      const response = await fetch(`http://localhost:3001/analyze?repo=${encodeURIComponent(repoUrl)}`);
+      const response = await fetch(`/api/analyze?repo=${encodeURIComponent(repoUrl)}`);
       
       if (!response.ok) {
         const errorData = await response.json();
