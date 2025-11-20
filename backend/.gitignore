@@ -2,3 +2,7 @@ node_modules
 test.js
 env.example
 README.md
+.env
+env
+
+test-integration.js
