@@ -95,11 +95,15 @@ class PythonIntegration {
                 resolve(false);
             });
 
-            // Timeout after 5 seconds
+            // Timeout after 3 seconds
             setTimeout(() => {
-                pythonProcess.kill();
+                try {
+                    pythonProcess.kill();
+                } catch (err) {
+                    // Ignore kill errors
+                }
                 resolve(false);
-            }, 5000);
+            }, 3000);
         });
     }
 

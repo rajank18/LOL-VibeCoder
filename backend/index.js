@@ -60,7 +60,7 @@ app.get('/health', (req, res) => {
 });
 
 // Main analysis endpoint
-app.get('/analyze', async (req, res) => {
+app.get('/api/analyze', async (req, res) => {
     const startTime = Date.now();
     
     try {
@@ -164,7 +164,7 @@ app.use('*', (req, res) => {
         message: 'The requested endpoint does not exist',
         availableEndpoints: [
             'GET /health - Health check',
-            'GET /analyze?repo=<github_url> - Analyze repository'
+            'GET /api/analyze?repo=<github_url> - Analyze repository'
         ]
     });
 });
@@ -246,9 +246,9 @@ app.listen(PORT, () => {
     console.log(`\n🚀 LOLVibeCoder Backend Server Started`);
     console.log(`📍 Server running on port ${PORT}`);
     console.log(`🌐 Health check: http://localhost:${PORT}/health`);
-    console.log(`🔍 Analysis endpoint: http://localhost:${PORT}/analyze?repo=<github_url>`);
+    console.log(`🔍 Analysis endpoint: http://localhost:${PORT}/api/analyze?repo=<github_url>`);
     console.log(`\nExample usage:`);
-    console.log(`curl "http://localhost:${PORT}/analyze?repo=https://github.com/facebook/react"`);
+    console.log(`curl "http://localhost:${PORT}/api/analyze?repo=https://github.com/facebook/react"`);
     console.log(`\nPress Ctrl+C to stop the server\n`);
 });
 
